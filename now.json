@@ -1,0 +1,14 @@
+{
+  "name": "touch-dog",
+  "version": 2,
+  "alias": "touch-dog",
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    { "src": "index.js", "use": "now-micro" }
+  ],
+  "routes": [
+    { "src": "/translate", "dest": "/index.js" }
+  ]
+}

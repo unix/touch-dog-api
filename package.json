@@ -1,0 +1,19 @@
+{
+  "name": "touch-dog-api",
+  "version": "1.0.0",
+  "description": "translate api for touch-dog",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro-dev",
+    "micro": "micro"
+  },
+  "author": "WittBulter (nanazuimeng123@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^9.3.3",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
+}
