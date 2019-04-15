@@ -1,21 +1,27 @@
 const { json } = require('micro')
 const fetch = require('node-fetch')
-const md5 = require('./assets/md5')
-const { appid, key, host } = require('./assets/configs')
+const host = 'https://api.cognitive.microsofttranslator.com/translate'
+const tranlsatorKey = process.env.TRANSLATOR_TEXT_KEY
 
-module.exports = async req => {
+module.exports = async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   const { text, from, to } = await json(req)
-  const salt = +new Date()
-  const str = appid + text + salt + key
-  const sign = md5(str)
-  const params = {
-    q: text, appid, salt, sign,
-    from: from || 'auto',
-    to: to || 'zh',
-  }
-  const paramsString = Object.keys(params).reduce((str, next) => `${str}&${next}=${params[next]}`, '')
-  const result = await fetch(`${host}?${paramsString}`)
-
-  return await result.json()
+  const query = `api-version=3.0&from=${from}&to=${to}`;
+  const response = await fetch(`${host}?${query}`, {
+    method: 'post',
+    headers: {
+      'Ocp-Apim-Subscription-Key': tranlsatorKey,
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify([{ text }]),
+  })
+  const results = await response.json()
+  const customRes = { trans_result: [] }
+  if (!results || !results[0].translations) return customRes
+  customRes.trans_result = results[0].translations.map(item => ({
+    src: text,
+    dst: item.text,
+  }))
+  return customRes
 }
 

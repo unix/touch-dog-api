@@ -1,0 +1,12 @@
+*.log
+*.md
+dist
+LICENSE
+node_modules/
+.gitignore
+.idea
+.git
+.yarn
+
+
+

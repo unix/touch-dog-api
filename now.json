@@ -5,10 +5,15 @@
   "github": {
     "silent": true
   },
+  "regions": ["hnd1"],
+  "env": {
+    "TRANSLATOR_TEXT_KEY": "@translator-azure-key"
+  },
   "builds": [
-    { "src": "index.js", "use": "now-micro" }
+    { "src": "*.js", "use": "now-micro" }
   ],
   "routes": [
-    { "src": "/translate", "dest": "/index.js" }
+    { "src": "/translate", "dest": "/index.js" },
+    { "src": "/google", "dest": "/google.js" }
   ]
 }

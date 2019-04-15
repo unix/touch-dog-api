@@ -64,3 +64,4 @@ dist/
 # pem
 dist.crx
 dist.pem
+.yarn
