@@ -10,6 +10,7 @@
   "author": "WittBulter (nanazuimeng123@gmail.com)",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.460.0",
     "micro": "^9.3.3",
     "node-fetch": "^2.3.0"
   },

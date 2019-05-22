@@ -65,3 +65,4 @@ dist/
 dist.crx
 dist.pem
 .yarn
+.env

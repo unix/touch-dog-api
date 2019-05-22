@@ -2,18 +2,18 @@
   "name": "touch-dog",
   "version": 2,
   "alias": "touch-dog",
+  "regions": ["sin1"],
   "github": {
-    "silent": true
+    "enabled": false
   },
-  "regions": ["hnd1"],
   "env": {
-    "TRANSLATOR_TEXT_KEY": "@translator-azure-key"
+    "AWS_ACCESS_KEY_ID2": "@aws-access-key-id",
+    "AWS_SECRET_ACCESS_KEY2": "@aws-secret-access-key"
   },
   "builds": [
     { "src": "*.js", "use": "now-micro" }
   ],
   "routes": [
-    { "src": "/translate", "dest": "/index.js" },
-    { "src": "/google", "dest": "/google.js" }
+    { "src": "/translate", "dest": "/index.js" }
   ]
 }
