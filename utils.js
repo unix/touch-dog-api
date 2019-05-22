@@ -13,7 +13,6 @@ const translate = async (text) => {
       SourceLanguageCode: 'en',
       TargetLanguageCode: 'zh',
     }, (err, data) => {
-      console.log(typeof data, data, 2, err)
       if (err || !data.TranslatedText) return resolve('')
       resolve(data.TranslatedText)
     })
