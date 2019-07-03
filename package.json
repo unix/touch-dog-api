@@ -7,7 +7,7 @@
     "start": "micro-dev",
     "micro": "micro"
   },
-  "author": "WittBulter (nanazuimeng123@gmail.com)",
+  "author": "unix (lambdas.dev@gmail.com)",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.460.0",
